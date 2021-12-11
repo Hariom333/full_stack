@@ -5,11 +5,10 @@ import { useHistory } from 'react-router-dom';
 function Home() {
 
     const [list,setList] = useState([]);
-   let history = useHistory()
+    let history = useHistory()
+  
     useEffect(()=>{
-
         axios.get('http://localhost:3001/posts').then((response)=>{
- 
                   setList(response.data);            
         });
     },[]);

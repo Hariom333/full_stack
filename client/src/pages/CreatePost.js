@@ -9,14 +9,14 @@ function CreatePost() {
 
     let history = useHistory();
 
-
+//### initial value
     const initialValue = {
         title:"",
         postText : "",
         userName : "",
     };
 
-
+//## form validation 
     const validationSchema = yup.object().shape({
            
         title: yup.string().required("you must put title"),
@@ -25,10 +25,10 @@ function CreatePost() {
 
     });
 
+
+  //### submit post ####//  
     const onSubmit = (data) => {
-
 axios.post("http://localhost:3001/posts", data).then((response)=>{
-
 history.push("/");
    console.log(data);
 
